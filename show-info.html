@@ -1,0 +1,91 @@
+<!-- show-info.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Information</title>
+  <style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+p {text-align: center;
+   color: #33
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #444;
+}
+  </style>
+</head>
+<body>
+<h1>User Information</h1>
+  <p>Name: {{ user['name'] }}</p>
+  <p>Birthday: {{ user['birthday'] }}</p>
+  <p>Age: {{ user['age'] }}</p>
+  <p>Date of visit: {{ user['date of visit'] }}</p>
+  <p>Reason for visit: {{ user['reason'] }}</p>
+  <img src="{{ medical2 }}" alt="Medical Note">
+
+
+<form action="/show-info" method="POST">
+    <input type="hidden" name="email" value="{{ user['email'] }}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ user['name'] }}">
+    <label for="birthday">Birthday:</label>
+    <input type="text" id="birthday" name="birthday" value="{{ user['birthday'] }}">
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" value="{{ user['age'] }}">
+    <label for="date">Date of Visit:</label>
+    <input type="text" id="date" name="date" value="{{ user['date of visit'] }}">
+    <label for="reason">Reason for Visit:</label>
+    <input type="text" id="reason" name="reason" value="{{ user['reason'] }}">
+>
+    <input type="submit" value="Update Information">
+</form>
+
+
+
+</body>
+</html>
